@@ -71,9 +71,27 @@ function showQuestion() {
 // Cevap seç
 function selectAnswer(selectedIndex) {
     const question = quizQuestions[currentQuestionIndex];
+    const optionsContainer = document.getElementById('options');
+    const buttons = optionsContainer.querySelectorAll('button');
+
+    // Doğru cevap ise skor artır
     if (selectedIndex === question.correct) {
         score++;
     }
+
+    // Tüm butonları pasifleştir ve border ekle
+    buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        btn.style.borderWidth = '2.5px';
+        if (idx === question.correct) {
+            btn.style.borderColor = '#2ecc40'; // yeşil
+        } else if (idx === selectedIndex) {
+            btn.style.borderColor = '#e74c3c'; // kırmızı
+        } else {
+            btn.style.borderColor = '#ccc';
+        }
+    });
+
     document.getElementById('next-btn').classList.remove('hidden');
 }
 
@@ -92,28 +110,29 @@ function nextQuestion() {
 function showResult() {
     document.getElementById('quiz-screen').classList.add('hidden');
     document.getElementById('result-screen').classList.remove('hidden');
-    addTwitterShareButton(score, quizQuestions.length, percentage, motivation);
+
+    const percentage = Math.round((score / quizQuestions.length) * 100);
+    document.getElementById('score').textContent = `${score} / ${quizQuestions.length}`;
     document.getElementById('percentage').textContent = `${percentage}%`;
-    
-    // Karakter önerisi
-    let character = "";
+
+    // Motivasyon mesajı
+    let motivation = "";
     if (percentage >= 90) {
-        character = "🌟 Yaprak Dökümü'nün gerçek uzmanısın!";
+        motivation = "🌟 SEN GERÇEK BİR YAPRAK DÖKÜMÜ GURMESİSİN!";
     } else if (percentage >= 75) {
-        character = "🎭 Diziye olan sevgin çok güçlü!";
+        motivation = "🎭 Harika! Dizinin ruhunu yakaladın.";
     } else if (percentage >= 60) {
-        character = "🌿 İyi bir izleyicisin ama biraz daha detay lazım!";
+        motivation = "🌿 Fena değil! Detaylara biraz daha dikkat!";
     } else if (percentage >= 40) {
-        character = "🏠 Tekrar izleme zamanı geldi!";
+        motivation = "🏠 Biraz daha izlemeye devam!";
     } else {
-        character = "📚 Yaprak Dökümü'nü keşfetmeye başla!";
+        motivation = "📚 Daha çok izle, daha çok öğren!";
     }
-    
-    document.getElementById('character').textContent = character;
-    
+    document.getElementById('motivation-message').textContent = motivation;
+
     // Twitter paylaş butonunu ekle
-    addTwitterShareButton(score, quizQuestions.length, percentage, character);
-    
+    addTwitterShareButton(score, quizQuestions.length, percentage, motivation);
+
     // İstatistikleri kaydet
     saveStats(score, quizQuestions.length, percentage);
     updateStats();
