@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2C1810" />
+    <meta
+      name="description"
+      content="Yaprak Dökümü Quiz - Türkiye'nin en sevilen dizisindeki bilginizi test edin!"
+    />
+    <meta
+      name="keywords"
+      content="yaprak dökümü, quiz, test, türk dizisi, bilgi yarışması, aile"
+    />
+    <meta name="author" content="Yaprak Dökümü Quiz App" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="🍂 Yaprak Dökümü Quiz" />
+    <meta
+      property="og:description"
+      content="Yaprak Dökümü dizisindeki bilginizi test edin! Tekin ailesi hakkında ne kadar şey biliyorsunuz?"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🍂 Yaprak Dökümü Quiz" />
+    <meta
+      name="twitter:description"
+      content="Yaprak Dökümü dizisindeki bilginizi test edin!"
+    />
+
+    <title>🍂 Yaprak Dökümü Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍂</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Background Autumn Leaves -->
+    <div class="leaves"></div>
+    <div class="leaves2"></div>
+    <div class="leaves3"></div>
+    <div class="leaves4"></div>
+    <div class="leaves5"></div>
+    <div class="leaves6"></div>
+
+    <!-- Main Container / Start Screen -->
+    <div class="container" id="start-screen">
+      <!-- Background Decorative Elements -->
+      <div class="background-decor">
+        <div class="decor-element" style="top: 10%; left: 10%">🍂</div>
+        <div class="decor-element" style="top: 15%; right: 15%">🏠</div>
+        <div class="decor-element" style="top: 70%; left: 5%">👨‍👩‍👧‍👦</div>
+        <div class="decor-element" style="bottom: 20%; right: 10%">🌅</div>
+      </div>
+
+      <!-- Header -->
+      <div class="header fade-in">
+        <div class="title-container">
+          <span class="leaf-icon">🍂</span>
+          <h1 class="title">Yaprak Dökümü Quiz</h1>
+        </div>
+        <p class="subtitle">Tekin Ailesinin Hikayesinden Sorular</p>
+      </div>
+
+      <!-- Content -->
+      <div class="content fade-in">
+        <div class="description-card">
+          <p class="description">
+            Türkiye'nin en sevilen dizilerinden Yaprak Dökümü'ndeki bilginizi
+            test etmeye hazır mısınız?
+          </p>
+          <p class="description-sub">
+            Tekin ailesi ve onların hikayesi hakkındaki bilginizi ölçün!
+          </p>
+        </div>
+
+        <!-- Start Button -->
+        <button class="start-button" onclick="startQuiz()">
+          <span class="button-gradient">🏠 Quiz'e Başla</span>
+        </button>
+
+        <!-- History Button -->
+        <button
+          class="history-button"
+          onclick="showHistory()"
+          id="historyButton"
+          style="display: none"
+        >
+          <span id="historyButtonText">📊 Geçmiş (0)</span>
+        </button>
+
+        <!-- Stats Container -->
+        <div class="stats-container" id="statsContainer">
+          <div class="stat-item">
+            <div class="stat-number" id="total-quizzes">0</div>
+            <div class="stat-label">Deneme</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" id="best-score">-</div>
+            <div class="stat-label">En İyi</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" id="average-score">-</div>
+            <div class="stat-label">Ortalama</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p class="footer-text">
+          Developed with ❤️ by <a href="https://twitter.com/bsrinceler" target="_blank" rel="noopener" style="color:#FFA000;font-weight:bold;">Büşra İnceler</a>
+        </p>
+        <p class="footer-sub-text" style="font-size:0.85em; opacity:0.4;">
+          special thanks ❤️ by 
+          <a href="https://twitter.com/mommy_ai" target="_blank" rel="noopener">@mommy__ai</a>,
+          <a href="https://twitter.com/discoonectus" target="_blank" rel="noopener">@_discoonectus</a> and
+          <a href="https://x.com/diiaannana" target="_blank" rel="noopener">@diiaannana</a>
+          for Yaprak Dökümü fans.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quiz Screen (Hidden initially) -->
+    <div class="quiz-screen hidden" id="quiz-screen">
+      <div class="quiz-header">
+        <button class="back-button" onclick="restartQuiz()">← Geri</button>
+        <div class="question-counter" id="question-number">Soru 1 / 15</div>
+      </div>
+      
+      <div class="question-container">
+        <h2 class="question" id="question">Soru yükleniyor...</h2>
+      </div>
+      
+      <div class="options-container" id="options">
+        <!-- Options will be loaded here -->
+      </div>
+      
+      <button class="next-button hidden" id="next-btn" onclick="nextQuestion()">
+        Sonraki Soru →
+      </button>
+    </div>
+
+    <!-- Result Screen (Hidden initially) -->
+    <div class="result-screen hidden" id="result-screen">
+      <div class="result-header">
+        <h1>🎉 Quiz Tamamlandı!</h1>
+      </div>
+      
+      <div class="result-content">
+        <div class="score-display">
+          <div class="final-score">
+            <span id="score">0 / 15</span>
+            <span class="percentage" id="percentage">0%</span>
+          </div>
+        </div>
+        
+        <div class="character-result">
+          <h3>Sen kimsin?</h3>
+          <p class="character" id="character">Karakter belirleniyor...</p>
+        </div>
+        
+        <button class="restart-button" onclick="restartQuiz()">
+          🔄 Tekrar Oyna
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

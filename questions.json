@@ -1,0 +1,77 @@
+[
+  {
+    "question": "Hayriye çayı nasıl içiyordu?",
+    "options": ["Şekersiz", "Tek şekerli", "2 şekerli", "Tek şekerli+limonlu"],
+    "correct": 0
+  },
+  {
+    "question": "Neyyiri istemeye geldiklerinde, Hayriye Kahveci Ahmet'i kime benzetip yaşını hiç göstermiyor demiştir?",
+    "options": ["Tarik Akan", "Cüneyt Arkın", "Şener Şen", "Halit Akçatepe"],
+    "correct": 3
+  },
+  {
+    "question": "Nezih Amerika'da ne okumuştu?",
+    "options": ["Uluslararası İlişkiler", "Ekonomi", "İşletme", "Politika"],
+    "correct": 1
+  },
+  {
+    "question": "Ayşe hangi bölümde değişmiştir?",
+    "options": ["13", "14", "15", "16"],
+    "correct": 2
+  },
+  {
+    "question": "Leyla Oğuz'la evlendiğinde yeni evinde ilk hangi yemeği yapmıştır?",
+    "options": ["Enginar", "Taze Fasulye", "Biber Dolması", "Türlü"],
+    "correct": 1
+  },
+  {
+    "question": "Sedef çocukken, hangi tiyatro oyununda başrolde oynamıştır?",
+    "options": ["Pamuk Prenses", "Kibritçi Kız", "Kül Kedisi", "Kırmızı Başlıklı Kız"],
+    "correct": 1
+  },
+  {
+    "question": "Ferhunde'nin altın gününde çekilen kurada çıkan kadının adı neydi?",
+    "options": ["Emine", "Seher", "Nezaket", "Sevim"],
+    "correct": 1
+  },
+  {
+    "question": "Muhallebiyi bol tarçınlı seven kimdi?",
+    "options": ["Ayşe", "Necla", "Leyla", "Şevket"],
+    "correct": 3
+  },
+  {
+    "question": "Tekin ailesi köşke geldiği gün Neyyir'le Sedef tanışmaya geldiğinde ellerindeki tabakta ne vardı?",
+    "options": ["Yaprak Sarma", "Börek", "Poğaça", "Kek"],
+    "correct": 1
+  },
+  {
+    "question": "Tekinlerin İstanbul'a taşındığının ertesi günü ailecek gezmeye gittikleri rotasyonlar arasında hangisi yoktur?",
+    "options": ["Sultanahmet", "Kapalıçarşı", "AVM", "Kız Kulesi"],
+    "correct": 3
+  },
+  {
+    "question": "Sedef'in lansmanında hangi ünlü yoktu?",
+    "options": ["Hüsnü Şenlendirici", "Ece Erken", "Reyhan Karaca", "Banu Zorlu"],
+    "correct": 3
+  },
+  {
+    "question": "Evi alacakken istimlak kararından dolayı vazgeçen Selami Bey nerede yaşıyordu?",
+    "options": ["İsviçre", "Almanya", "Fransa", "Belçika"],
+    "correct": 0
+  },
+  {
+    "question": "Ali Rıza'nın tam Karavana yemeği olmuş dediği yemek neydi?",
+    "options": ["Yeşil Mercimek", "Kuru Fasulye", "Nohut", "Bezelye"],
+    "correct": 1
+  },
+  {
+    "question": "Şevket ödemediği için köşkte elektriğin kesilmesine neden olan fatura kaç liradır?",
+    "options": ["46", "48", "52", "55"],
+    "correct": 2
+  },
+  {
+    "question": "Neyyir Hanım'ın gün menüsünde hangi yiyecek yoktu?",
+    "options": ["Patates Salatası", "Kek", "Sarma", "Kısır"],
+    "correct": 3
+  }
+]
