@@ -71,21 +71,9 @@ function showQuestion() {
 // Cevap seç
 function selectAnswer(selectedIndex) {
     const question = quizQuestions[currentQuestionIndex];
-    const options = document.querySelectorAll('#options button');
-    
-    options.forEach((button, index) => {
-        button.disabled = true;
-        if (index === question.correct) {
-            button.classList.add('correct');
-        } else if (index === selectedIndex && index !== question.correct) {
-            button.classList.add('incorrect');
-        }
-    });
-    
     if (selectedIndex === question.correct) {
         score++;
     }
-    
     document.getElementById('next-btn').classList.remove('hidden');
 }
 
@@ -104,9 +92,7 @@ function nextQuestion() {
 function showResult() {
     document.getElementById('quiz-screen').classList.add('hidden');
     document.getElementById('result-screen').classList.remove('hidden');
-    
-    const percentage = Math.round((score / quizQuestions.length) * 100);
-    document.getElementById('score').textContent = `${score} / ${quizQuestions.length}`;
+    addTwitterShareButton(score, quizQuestions.length, percentage, motivation);
     document.getElementById('percentage').textContent = `${percentage}%`;
     
     // Karakter önerisi
