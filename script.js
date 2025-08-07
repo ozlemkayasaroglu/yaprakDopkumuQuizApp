@@ -98,15 +98,15 @@ function showResult() {
     // Karakter önerisi
     let character = "";
     if (percentage >= 90) {
-        character = "🌟 Hayriye Hanım - Yaprak Dökümü'nün gerçek uzmanısın!";
+        character = "🌟 Yaprak Dökümü'nün gerçek uzmanısın!";
     } else if (percentage >= 75) {
-        character = "🎭 Sedef - Diziye olan sevgin çok güçlü!";
+        character = "🎭 Diziye olan sevgin çok güçlü!";
     } else if (percentage >= 60) {
-        character = "🌿 Leyla - İyi bir izleyicisin ama biraz daha detay lazım!";
+        character = "🌿 İyi bir izleyicisin ama biraz daha detay lazım!";
     } else if (percentage >= 40) {
-        character = "🏠 Nezih - Tekrar izleme zamanı geldi!";
+        character = "🏠 Tekrar izleme zamanı geldi!";
     } else {
-        character = "📚 Şevket - Yaprak Dökümü'nü keşfetmeye başla!";
+        character = "📚 Yaprak Dökümü'nü keşfetmeye başla!";
     }
     
     document.getElementById('character').textContent = character;
